@@ -27,7 +27,10 @@ class LoginActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Username or Password is incorrect", Toast.LENGTH_SHORT).show()
             }
+        }
 
+        textview_register.setOnClickListener {
+            toRegister()
         }
     }
 
@@ -35,6 +38,11 @@ class LoginActivity : AppCompatActivity() {
         val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    fun toRegister(){
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onStart() {
